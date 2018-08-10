@@ -15,7 +15,7 @@ VGG网络解读
 
 # 三. 代码
 
-> 参考https://www.cs.toronto.edu/~frossard/vgg16/vgg16.py. ，利用VGG16实现MNIST识别，代码入下：
+> 参考https://www.cs.toronto.edu/~frossard/vgg16/vgg16.py. ，利用VGG16实现MNIST识别，代码如下：
 
 ```python
 ########## load packages ##########
