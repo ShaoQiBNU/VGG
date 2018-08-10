@@ -10,7 +10,7 @@ VGG网络解读
 
 > VGGNet的所有卷积层有相同的配置，即卷积核大小为3x3，步长为1，填充为1；共有5个最大池化层，大小都为2x2，步长为2；共有三个全连接层，前两层都有4096通道，第三层共1000类及代表1000个标签类别；最后一层为softmax层；所有隐藏层后都带有ReLU非线性激活函数；经过实验证明，AlexNet中提出的局部响应归一化（LRN）对性能提升并没有什么帮助，而且还浪费了内存的计算的损耗。VGGNet的网络结构如图所示
 
-![image](https://github.com/ShaoQiBNU/Resnet/blob/master/images/1.jpg)
+![image](https://github.com/ShaoQiBNU/VGG/blob/master/images/1.jpg)
 
 
 # 三. 代码
