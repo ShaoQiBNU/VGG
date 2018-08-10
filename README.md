@@ -58,9 +58,15 @@ def VGG16(x,n_classes):
     ####### first conv ########
     #### conv 1_1 ####
     conv1=tf.layers.conv2d(x,filters=64,kernel_size=3,strides=1,padding='SAME')
+
+    #### relu ####
+    conv1=tf.nn.relu(conv1)
     
     #### conv 1_2 ####
     conv1=tf.layers.conv2d(conv1,filters=64,kernel_size=3,strides=1,padding='SAME')
+
+    #### relu ####
+    conv1=tf.nn.relu(conv1)
 
 
     ####### max pool ########
@@ -70,9 +76,15 @@ def VGG16(x,n_classes):
     ####### second conv ########
     #### conv 2_1 ####
     conv2=tf.layers.conv2d(pool1,filters=128,kernel_size=3,strides=1,padding='SAME')
+
+    #### relu ####
+    conv2=tf.nn.relu(conv2)
     
     #### conv 2_2 ####
     conv2=tf.layers.conv2d(conv2,filters=128,kernel_size=3,strides=1,padding='SAME')
+
+    #### relu ####
+    conv2=tf.nn.relu(conv2)
 
 
     ####### max pool ########
@@ -83,11 +95,20 @@ def VGG16(x,n_classes):
     #### conv 3_1 ####
     conv3=tf.layers.conv2d(pool2,filters=256,kernel_size=3,strides=1,padding='SAME')
 
+    #### relu ####
+    conv3=tf.nn.relu(conv3)
+
     #### conv 3_2 ####
     conv3=tf.layers.conv2d(conv3,filters=256,kernel_size=3,strides=1,padding='SAME')
 
+    #### relu ####
+    conv3=tf.nn.relu(conv3)
+
     #### conv 3_3 ####
     conv3=tf.layers.conv2d(conv3,filters=256,kernel_size=1,strides=1,padding='SAME')
+
+    #### relu ####
+    conv3=tf.nn.relu(conv3)
 
 
     ####### max pool ########
@@ -98,11 +119,20 @@ def VGG16(x,n_classes):
     #### conv 4_1 ####
     conv4=tf.layers.conv2d(pool3,filters=512,kernel_size=3,strides=1,padding='SAME')
 
+    #### relu ####
+    conv4=tf.nn.relu(conv4)
+
     #### conv 4_2 ####
     conv4=tf.layers.conv2d(conv4,filters=512,kernel_size=3,strides=1,padding='SAME')
 
+    #### relu ####
+    conv4=tf.nn.relu(conv4)
+
     #### conv 4_3 ####
     conv4=tf.layers.conv2d(conv4,filters=512,kernel_size=1,strides=1,padding='SAME')
+
+    #### relu ####
+    conv4=tf.nn.relu(conv4)
 
     
     ####### max pool ########
@@ -113,11 +143,20 @@ def VGG16(x,n_classes):
     #### conv 5_1 ####
     conv5=tf.layers.conv2d(pool4,filters=512,kernel_size=3,strides=1,padding='SAME')
 
+    #### relu ####
+    conv5=tf.nn.relu(conv5)
+
     #### conv 5_2 ####
     conv5=tf.layers.conv2d(conv5,filters=512,kernel_size=3,strides=1,padding='SAME')
 
+    #### relu ####
+    conv5=tf.nn.relu(conv5)
+
     #### conv 5_3 ####
     conv5=tf.layers.conv2d(conv5,filters=512,kernel_size=1,strides=1,padding='SAME')
+
+    #### relu ####
+    conv5=tf.nn.relu(conv5)
 
     
     ####### max pool ########
@@ -205,4 +244,5 @@ with tf.Session() as sess:
     for _ in range(mnist.test.num_examples//batch_size_test):
         batch_x,batch_y=mnist.test.next_batch(batch_size_test)
         print("Testing Accuracy:", sess.run(accuracy, feed_dict={x: batch_x, y: batch_y}))
+
 ```
